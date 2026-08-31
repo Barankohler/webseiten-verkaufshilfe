@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3B5BDB">
+<title>So rufst du an</title>
+<meta name="description" content="Der Gesprächsablauf für den Erstkontakt mit einem Betrieb.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233B5BDB'/%3E%3Ctext x='16' y='23' font-size='18' font-family='Helvetica,Arial' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --indigo:#3B5BDB;
+  --indigo-dunkel:#2B45AB;
+  --flaeche:#F2F5FD;
+  --akzent:#E6ECFB;
+  --linie:#E1E7F7;
+  --ink:#1A2450;
+  --leise:#5A6488;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);line-height:1.55;font-size:16px;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px}
+a{color:var(--indigo)}
+header{border-bottom:1px solid var(--linie);padding:16px 0 14px;background:#fff;
+ position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;gap:12px}
+header .zurueck{flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+ width:40px;height:40px;margin-left:-8px;border-radius:10px;text-decoration:none;
+ color:var(--indigo);font-size:22px;font-weight:700}
+header .zurueck:active{background:var(--akzent)}
+header h1{margin:0;font-size:18px;letter-spacing:-.01em}
+header p{margin:2px 0 0;font-size:13.5px;color:var(--leise)}
+h2{font-size:17px;margin:26px 0 4px;letter-spacing:-.01em}
+h2:first-child{margin-top:20px}
+h2 .strich{display:inline-block;width:3px;height:15px;background:var(--indigo);
+ border-radius:2px;margin-right:8px;vertical-align:-2px}
+p.lead{color:var(--leise);font-size:14.5px;margin:0 0 14px}
+
+/* Kacheln der Startseite: gross genug fuer den Daumen, mind. 68px hoch */
+.kacheln{display:grid;gap:11px;margin:18px 0 8px}
+.kachel{display:flex;align-items:center;gap:14px;padding:16px 15px;text-decoration:none;
+ color:var(--ink);background:#fff;border:1px solid var(--linie);border-radius:14px;
+ min-height:68px}
+.kachel:active{background:var(--flaeche);border-color:var(--indigo)}
+.kachel .zeichen{flex:0 0 44px;height:44px;border-radius:12px;background:var(--akzent);
+ color:var(--indigo);display:flex;align-items:center;justify-content:center}
+.kachel .zeichen svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.9;fill:none;
+ stroke-linecap:round;stroke-linejoin:round}
+.kachel b{display:block;font-size:16.5px;line-height:1.3;color:var(--ink)}
+.kachel span{display:block;font-size:13.5px;color:var(--leise);line-height:1.35;margin-top:1px}
+.kachel .pfeil{margin-left:auto;color:var(--indigo);font-size:19px;font-weight:700}
+
+/* Karten, Kaesten, Zeilen */
+.karte{border:1px solid var(--linie);border-radius:14px;padding:16px;margin:10px 0;background:#fff}
+.karte.empfehlung{border:2px solid var(--indigo)}
+.karte .band{display:inline-block;background:var(--indigo);color:#fff;font-size:11px;
+ font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:20px;margin-bottom:9px}
+.karte .name{font-size:15px;font-weight:700}
+.karte .preis{font-size:36px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:2px 0}
+.karte .einheit{font-size:13.5px;color:var(--leise);margin-bottom:10px}
+.karte ul{margin:0;padding-left:19px}
+.karte li{font-size:14.5px;margin:4px 0}
+.karte .fuss{margin-top:11px;padding-top:10px;border-top:1px solid var(--linie);
+ font-size:13.5px;color:var(--leise)}
+.kasten{background:var(--flaeche);border-left:3px solid var(--indigo);border-radius:0 12px 12px 0;
+ padding:14px 15px;margin:14px 0;font-size:14.5px}
+.kasten b{display:block;margin-bottom:3px}
+.zeilen{border:1px solid var(--linie);border-radius:14px;overflow:hidden;margin:12px 0}
+.zeilen div{display:flex;justify-content:space-between;gap:14px;padding:12px 15px;font-size:14.5px;
+ border-bottom:1px solid var(--linie)}
+.zeilen div:last-child{border-bottom:0}
+.zeilen span:last-child{font-weight:700;white-space:nowrap}
+.klein{font-size:12.5px;color:var(--leise);line-height:1.5}
+
+/* Formularteile */
+label{display:block;font-weight:600;font-size:14.5px;margin:14px 0 5px}
+label .opt{font-weight:400;color:var(--leise);font-size:13px}
+input[type=text],input[type=search],select{width:100%;padding:13px;border:1px solid var(--linie);
+ border-radius:11px;font:inherit;font-size:16px;background:#fff;color:var(--ink);
+ -webkit-appearance:none;appearance:none}
+input:focus,select:focus{outline:2px solid var(--indigo);outline-offset:1px;border-color:var(--indigo)}
+.wahl{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:6px}
+.wahl div{border:2px solid var(--linie);border-radius:12px;padding:12px;cursor:pointer;background:#fff;
+ font-size:14.5px;min-height:56px;display:flex;flex-direction:column;justify-content:center}
+.wahl div b{display:block;font-size:15px}
+.wahl div small{color:var(--leise);font-size:12.5px}
+.wahl div.an{border-color:var(--indigo);background:var(--akzent)}
+.knopf{display:block;width:100%;padding:16px;border:0;border-radius:12px;background:var(--indigo);
+ color:#fff;font:inherit;font-weight:700;font-size:16.5px;cursor:pointer;text-align:center;
+ text-decoration:none;margin-top:12px}
+.knopf:active{background:var(--indigo-dunkel)}
+.knopf.leise{background:var(--flaeche);color:var(--ink);border:1px solid var(--linie);font-weight:600}
+.knopf.leise:active{background:var(--akzent)}
+.vorschau{background:var(--flaeche);border:1px solid var(--linie);border-radius:12px;padding:14px;
+ margin-top:14px;font-size:14.5px;white-space:pre-wrap;word-break:break-word}
+
+/* WhatsApp-Bausteine */
+.baustein{border:1px solid var(--linie);border-radius:14px;margin:11px 0;overflow:hidden}
+.baustein .kopf{display:flex;align-items:center;gap:10px;padding:14px 15px;cursor:pointer;
+ background:#fff;min-height:60px}
+.baustein .kopf b{font-size:15.5px;display:block}
+.baustein .kopf small{color:var(--leise);font-size:12.5px}
+.baustein .kopf .nr{flex:0 0 30px;height:30px;border-radius:9px;background:var(--akzent);
+ color:var(--indigo);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.baustein .kopf .auf{margin-left:auto;color:var(--indigo);font-weight:700;font-size:18px}
+.baustein .koerper{display:none;padding:0 15px 15px;border-top:1px solid var(--linie)}
+.baustein.offen .koerper{display:block}
+.baustein.offen .kopf .auf{transform:rotate(45deg)}
+.text{background:var(--flaeche);border-radius:11px;padding:13px;margin-top:13px;font-size:14.5px;
+ line-height:1.5;word-break:break-word}
+.zwei{display:flex;gap:9px}
+.zwei .knopf{flex:1}
+footer{border-top:1px solid var(--linie);margin-top:32px;padding:16px 0 28px;font-size:12.5px;
+ color:var(--leise)}
+footer a{color:var(--leise)}
+.hinweis{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);
+ background:var(--ink);color:#fff;padding:12px 20px;border-radius:24px;font-size:14.5px;
+ font-weight:600;opacity:0;transition:opacity .18s,transform .18s;pointer-events:none;z-index:20}
+.hinweis.an{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(min-width:560px){.kacheln{gap:12px}}
+
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:none;margin:2px 0}
+input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:var(--linie)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;
+ background:var(--indigo);margin-top:-11px;border:3px solid #fff;box-shadow:0 1px 4px rgba(26,36,80,.25)}
+input[type=range]::-moz-range-track{height:8px;border-radius:4px;background:var(--linie)}
+input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;background:var(--indigo);
+ border:3px solid #fff;box-shadow:0 1px 4px rgba(26,36,80,.25)}
+.regler{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px}
+.regler b{font-size:14.5px}
+.regler span{font-weight:700;color:var(--indigo);font-size:17px;white-space:nowrap}
+.gross{font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1.15}
+.gross small{font-size:15px;font-weight:400;color:var(--leise);letter-spacing:0;display:block;margin-top:2px}
+.balkenzeile{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13.5px}
+.balkenzeile em{flex:0 0 96px;font-style:normal;color:var(--leise);text-align:right}
+.balkenrahmen{flex:1;background:var(--flaeche);border-radius:9px;height:20px;overflow:hidden}
+.balken{height:100%;background:var(--indigo);border-radius:9px;width:0;transition:width .3s ease}
+.balken.leise{background:var(--leise);opacity:.45}
+.balkenzeile b{flex:0 0 74px;white-space:nowrap}
+
+.liste{border:1px solid var(--linie);border-radius:14px;overflow:hidden;margin:12px 0}
+.liste .zeile{display:block;width:100%;padding:13px 15px;border:0;border-bottom:1px solid var(--linie);
+ background:#fff;font:inherit;text-align:left;cursor:pointer;color:var(--ink);text-decoration:none}
+.liste .zeile:last-child{border-bottom:0}
+.liste .zeile:active{background:var(--flaeche)}
+.liste .zeile b{display:block;font-size:15px;line-height:1.35;font-weight:600}
+.liste .zeile span{display:block;font-size:12.5px;color:var(--leise);margin-top:1px}
+.gruppe{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--leise);
+ text-transform:uppercase;margin:20px 0 6px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="zurueck" href="./" aria-label="Zurück zur Startseite">&#8249;</a><div><h1>So rufst du an</h1><p>Vier Schritte, wörtlich</p></div></div></header>
+<div class="wrap">
+
+<p class="lead">Ziel des Anrufs: die WhatsApp-Nummer und die Erlaubnis, etwas zu schicken.
+Verkauft wird nicht am Telefon.</p>
+<div class="karte"><div class="klein">Schritt 1</div><div style="font-size:16px;font-weight:700;margin:2px 0 8px">Vorstellen</div><div class="text">"Guten Tag, [dein Vorname und Nachname]. Wir bauen Webseiten für Betriebe wie Ihren. Spreche ich mit dem Inhaber?"</div></div><div class="karte"><div class="klein">Schritt 2</div><div style="font-size:16px;font-weight:700;margin:2px 0 8px">Fragen</div><div class="text">"Ich will Ihnen erstmal nichts verkaufen. Ich habe gesehen, dass Sie keine eigene Webseite haben, stimmt das? Und wie zufrieden sind Sie damit, wie Neukunden Sie im Internet finden?"</div><p class="klein" style="margin:9px 0 0">Jetzt: still sein und zuhören.</p></div><div class="karte"><div class="klein">Schritt 3</div><div style="font-size:16px;font-weight:700;margin:2px 0 8px">Haken setzen</div><div class="text">"Wer Sie googelt, findet im Moment die Konkurrenz. Die Neukunden laufen an Ihnen vorbei, ohne dass Sie es merken."</div><p class="klein" style="margin:9px 0 0">Der passende Satz je Branche steht beim Haken je Branche.</p></div><div class="karte"><div class="klein">Schritt 4</div><div style="font-size:16px;font-weight:700;margin:2px 0 8px">Abschließen</div><div class="text">"Ich schicke Ihnen per WhatsApp unsere eigene Firmenseite und das Preisblatt. Da sehen Sie, wie wir arbeiten. Gefällt es Ihnen, sagen Sie einfach Ja. Zwei Werktage nachdem Sie mir Zeiten, Leistungen und Fotos geschickt haben, ist Ihre Seite online. Bezahlt wird erst, wenn sie live ist und Ihnen gefällt."</div><p class="klein" style="margin:9px 0 0">Danach kommt der Einwilligungssatz, ohne ihn geht keine Nachricht raus.</p></div>
+<h2><span class="strich"></span>Der Satz, der nie fehlen darf</h2>
+<div class="text" id="einwilligung">"Darf ich Ihnen unsere Seite und das Preisblatt per WhatsApp an diese Nummer schicken und mich in den nächsten drei Wochen dazu noch einmal melden? Sie können das jederzeit mit einem Wort stoppen."</div>
+<button class="knopf leise" onclick="kopiere(document.getElementById('einwilligung').innerText)">Satz kopieren</button>
+<p class="klein">Antwort abwarten und sofort notieren: Datum, Uhrzeit, Name, Nummer, Wortlaut. Ohne diese Angaben geht keine Nachricht raus. Der Satz deckt auch das Nachfassen ab. Ohne diesen Satz darf niemand eine Nachricht bekommen.</p>
+
+<h2><span class="strich"></span>Der Haken je Branche</h2>
+<div class="zeilen"><div><span>Friseur / Nagelstudio</span><span style="font-weight:400;text-align:left">Wer "Friseur" plus seinen Ort googelt, findet die Konkurrenz.</span></div><div><span>Imbiss</span><span style="font-weight:400;text-align:left">Ohne Speisekarte online gehen die Leute zum Nächsten.</span></div><div><span>Kfz-Werkstatt</span><span style="font-weight:400;text-align:left">Ohne Seite wirken Sie kleiner als Sie sind.</span></div><div><span>Schneiderei / Kiosk</span><span style="font-weight:400;text-align:left">Wer Ihre Öffnungszeiten nicht findet, ruft nicht an.</span></div><div><span>Hat Instagram</span><span style="font-weight:400;text-align:left">Die Seite macht Sie bei Google sichtbar und verlinkt Instagram.</span></div></div>
+
+<h2><span class="strich"></span>Der Preis, nur wenn er fragt</h2>
+<div class="kasten">
+  <b>99 Euro netto im Monat</b>, rund 118 mit Mehrwertsteuer.
+  Domain, Hosting, Texte, Bilder und 2 Änderungen im Monat sind dabei.
+  Bezahlt wird erst, wenn die Seite live ist und ihm gefällt. Keine weitere Zahl am Telefon,
+  alles andere steht auf dem Preisblatt.
+</div>
+
+<h2><span class="strich"></span>Die 5 Regeln</h2>
+<div class="zeilen"><div><span>1</span><span style="font-weight:400;text-align:left">Stehen, lächeln, deutlich sprechen.</span></div><div><span>2</span><span style="font-weight:400;text-align:left">Immer WIR, nie ich.</span></div><div><span>3</span><span style="font-weight:400;text-align:left">Erst fragen, dann zuhören, dann anbieten.</span></div><div><span>4</span><span style="font-weight:400;text-align:left">Preise netto. Die 99 bewegen sich nie, kein Rabatt am Telefon. Wer drückt, bekommt die Einrichtung erlassen, sonst nichts.</span></div><div><span>5</span><span style="font-weight:400;text-align:left">Ohne dokumentierte Einwilligung keine WhatsApp. In jede Nachricht: STOP-Hinweis.</span></div></div>
+
+<h2><span class="strich"></span>Wann anrufen</h2>
+<p class="klein">
+  Erst Werkstätten, Handwerk, Gastronomie und Praxen, dann Studios und Salons.
+  Imbisse nicht zwischen 12 und 14:30 Uhr. Nur Firmennummern anrufen, nie privat.
+  Wer sagt "nie wieder anrufen": sofort zusagen und uns Bescheid geben.
+</p>
+
+<footer>
+  Webseiten für Betriebe. Preisstand 30.08.2026, alle Zahlen aus der Firmendatei.<br>
+  Diese Seite ist öffentlich. Sie enthält keine Kundendaten. Was Sie hier eintippen,
+  bleibt in Ihrem Browser und wird nirgends gespeichert.
+</footer>
+</div>
+<div class="hinweis" id="hinweis"></div>
+<script>
+
+function melde(t){var h=document.getElementById("hinweis");h.textContent=t;h.classList.add("an");
+ clearTimeout(window._ht);window._ht=setTimeout(function(){h.classList.remove("an");},1600);}
+function kopiere(text){
+  function alt(){var a=document.createElement("textarea");a.value=text;a.style.position="fixed";
+   a.style.opacity="0";document.body.appendChild(a);a.select();
+   try{document.execCommand("copy");melde("Kopiert");}catch(e){melde("Bitte von Hand markieren");}
+   document.body.removeChild(a);}
+  if(navigator.clipboard&&window.isSecureContext){
+    navigator.clipboard.writeText(text).then(function(){melde("Kopiert");},alt);
+  } else { alt(); }
+}
+function wa(text){window.location.href="https://wa.me/?text="+encodeURIComponent(text);}
+
+</script>
+</body>
+</html>
