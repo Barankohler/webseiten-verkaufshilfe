@@ -121,6 +121,14 @@ footer a{color:var(--leise)}
  background:var(--ink);color:#fff;padding:12px 20px;border-radius:24px;font-size:14.5px;
  font-weight:600;opacity:0;transition:opacity .18s,transform .18s;pointer-events:none;z-index:20}
 .hinweis.an{opacity:1;transform:translateX(-50%) translateY(0)}
+/* Umschalter oben auf zusammengehoerenden Seiten (Preise und Lohnt sich).
+   Gleiche Optik wie die Filterleiste der Arbeits-Zentrale. */
+.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 18px 2px;margin:14px -18px 4px;
+ -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto;border:1px solid var(--linie);background:#fff;color:var(--ink);
+ border-radius:20px;padding:8px 15px;font-size:14px;white-space:nowrap;text-decoration:none}
+.chips a.an{background:var(--indigo);border-color:var(--indigo);color:#fff;font-weight:600}
 @media(min-width:560px){.kacheln{gap:12px}}
 
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:none;margin:2px 0}
@@ -164,13 +172,12 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
 </div>
 
 <div class="kacheln">
-  <a class="kachel" href="leitfaden.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 6.2 2 2 0 0 1 6 3z"/></svg></span><span><b>So rufst du an</b><span>Der Ablauf in vier Schritten, wörtlich</span></span><span class="pfeil">&#8250;</span></a>
-  <a class="kachel" href="einwand.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></span><span><b>Einwand-Finder</b><span>Antippen statt blättern, Antwort groß</span></span><span class="pfeil">&#8250;</span></a>
-  <a class="kachel" href="referenz.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6.1L12 16.8 6.7 19.7l1.1-6.1L3.4 9.4l6-.8z"/></svg></span><span><b>Das zeigst du</b><span>Unsere eigene Firma, und der Satz dazu</span></span><span class="pfeil">&#8250;</span></a>
-  <a class="kachel" href="preise.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6.5A7 7 0 0 0 8 12a7 7 0 0 0 10 5.5"/><path d="M4 10.5h8"/><path d="M4 13.8h8"/></svg></span><span><b>Preise</b><span>Was es kostet, Stand 30.08.2026</span></span><span class="pfeil">&#8250;</span></a>
-  <a class="kachel" href="lohnt.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16"/><path d="M7 20h10"/><path d="M5 7h14"/><path d="M7 7l-2.7 5a3 3 0 0 0 5.4 0z"/><path d="M17 7l-2.7 5a3 3 0 0 0 5.4 0z"/></svg></span><span><b>Lohnt sich das?</b><span>Der Betrieb stellt seinen eigenen Fall ein</span></span><span class="pfeil">&#8250;</span></a>
-  <a class="kachel" href="texte.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a7 7 0 0 1-9.8 6.4L4 20l1.6-5.8A7 7 0 1 1 20 12z"/></svg></span><span><b>Nachrichten</b><span>Fertige Texte zum Kopieren</span></span><span class="pfeil">&#8250;</span></a>
-  <a class="kachel" href="tippgeber.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.4"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></svg></span><span><b>Deine Prämie</b><span>200 Euro je Kunde, ab dem 5. 250</span></span><span class="pfeil">&#8250;</span></a>
+  <a class="kachel" href="leitfaden.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 6.2 2 2 0 0 1 6 3z"/></svg></span><span><b>Anrufen</b><span>Der Ablauf in vier Schritten, wörtlich</span></span><span class="pfeil">&#8250;</span></a>
+  <a class="kachel" href="einwand.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></span><span><b>Einwand</b><span>Antippen statt blättern, Antwort groß</span></span><span class="pfeil">&#8250;</span></a>
+  <a class="kachel" href="referenz.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6.1L12 16.8 6.7 19.7l1.1-6.1L3.4 9.4l6-.8z"/></svg></span><span><b>Zeigen</b><span>Unsere eigene Firma, und der Satz dazu</span></span><span class="pfeil">&#8250;</span></a>
+  <a class="kachel" href="preise.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6.5A7 7 0 0 0 8 12a7 7 0 0 0 10 5.5"/><path d="M4 10.5h8"/><path d="M4 13.8h8"/></svg></span><span><b>Preise</b><span>Was es kostet, und ob es sich lohnt</span></span><span class="pfeil">&#8250;</span></a>
+  <a class="kachel" href="texte.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a7 7 0 0 1-9.8 6.4L4 20l1.6-5.8A7 7 0 1 1 20 12z"/></svg></span><span><b>Nachricht</b><span>Fertige Texte zum Kopieren</span></span><span class="pfeil">&#8250;</span></a>
+  <a class="kachel" href="tippgeber.html"><span class="zeichen"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.4"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></svg></span><span><b>Prämie</b><span>200 Euro je Kunde, ab dem 5. 250</span></span><span class="pfeil">&#8250;</span></a>
 </div>
 
 <div class="kasten">

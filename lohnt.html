@@ -121,6 +121,14 @@ footer a{color:var(--leise)}
  background:var(--ink);color:#fff;padding:12px 20px;border-radius:24px;font-size:14.5px;
  font-weight:600;opacity:0;transition:opacity .18s,transform .18s;pointer-events:none;z-index:20}
 .hinweis.an{opacity:1;transform:translateX(-50%) translateY(0)}
+/* Umschalter oben auf zusammengehoerenden Seiten (Preise und Lohnt sich).
+   Gleiche Optik wie die Filterleiste der Arbeits-Zentrale. */
+.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 18px 2px;margin:14px -18px 4px;
+ -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto;border:1px solid var(--linie);background:#fff;color:var(--ink);
+ border-radius:20px;padding:8px 15px;font-size:14px;white-space:nowrap;text-decoration:none}
+.chips a.an{background:var(--indigo);border-color:var(--indigo);color:#fff;font-weight:600}
 @media(min-width:560px){.kacheln{gap:12px}}
 
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:none;margin:2px 0}
@@ -156,7 +164,7 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
 <body>
 <header><div class="wrap"><a class="zurueck" href="./" aria-label="Zurück zur Startseite">&#8249;</a><div><h1>Lohnt sich das?</h1><p>Rechnen Sie Ihren eigenen Fall</p></div></div></header>
 <div class="wrap">
-
+<div class="chips"><a class="" href="preise.html">Preise</a><a class="an" href="lohnt.html">Lohnt sich?</a></div>
 <p class="lead" style="margin-top:14px">Stellen Sie Ihren eigenen Fall ein. Wir rechnen
 vorsichtig: aus drei Anfragen wird ein Kunde.</p>
 <label>Branche</label>
