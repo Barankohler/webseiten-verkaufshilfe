@@ -150,6 +150,12 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
 .balken.leise{background:var(--leise);opacity:.45}
 .balkenzeile b{flex:0 0 74px;white-space:nowrap}
 
+/* Suchfeld mit Lupe. Ohne diese Regeln zeichnet der Browser das SVG in voller
+   Groesse und schwarz gefuellt mitten auf die Seite. */
+.suche{position:relative;margin-top:12px}
+.suche input{padding-left:38px}
+.suche svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;
+ stroke:var(--leise);stroke-width:2;fill:none;pointer-events:none}
 .liste{border:1px solid var(--linie);border-radius:14px;overflow:hidden;margin:12px 0}
 .liste .zeile{display:block;width:100%;padding:13px 15px;border:0;border-bottom:1px solid var(--linie);
  background:#fff;font:inherit;text-align:left;cursor:pointer;color:var(--ink);text-decoration:none}
@@ -212,6 +218,12 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
   sie immer. Das schützt dich und uns. Der Betrieb zahlt erst, wenn die Seite online ist und
   ihm gefällt.
 </p>
+
+<h2><span class="strich"></span>Zum Zeigen und Mitgeben</h2>
+<a class="knopf leise" href="Tippgeber-Anleitung.pdf" target="_blank" rel="noopener">Anleitung als Blatt öffnen</a>
+<a class="knopf leise" href="Tippgeber-Karten.pdf" target="_blank" rel="noopener">Karten zum Ausdrucken</a>
+<a class="knopf leise" href="Flyer%20Webseiten.pdf" target="_blank" rel="noopener">Flyer öffnen</a>
+<a class="knopf leise" href="Partnerprogramm%20f%C3%BCr%20Unternehmen.pdf" target="_blank" rel="noopener">Partnerprogramm für Firmen</a>
 
 <button class="knopf" id="weiter">Verkaufshilfe weitergeben</button>
 <button class="knopf leise" onclick="kopiere('https://barankohler.github.io/webseiten-verkaufshilfe')">Link kopieren</button>
