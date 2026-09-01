@@ -219,7 +219,7 @@ function kopiere(text){
 }
 function wa(text){window.location.href="https://wa.me/?text="+encodeURIComponent(text);}
 
-var LO={"monat": 99, "kauf": 1980, "hosting": 15, "branchen": [["handwerk", "Handwerk (Maler, Sanitär, Elektro)", 300], ["kfz", "Kfz-Werkstatt", 150], ["gastro", "Imbiss, Café, Restaurant", 40], ["salon", "Friseur, Kosmetik, Studio", 45], ["dienst", "Dienstleistung (Reinigung, Umzug, Garten)", 200], ["andere", "Andere Branche", 100]]};
+var LO={"monat": 99, "kauf": 1980, "hosting": 15, "branchen": [["handwerk", "Handwerk (Maler, Sanitär, Elektro)", 300], ["kfz", "Kfz-Werkstatt", 150], ["gastro", "Imbiss, Café, Restaurant", 40], ["salon", "Friseur, Kosmetik, Studio", 40], ["dienst", "Dienstleistung (Reinigung, Umzug, Garten)", 200], ["andere", "Andere Branche", 100]]};
 function loEuro(n){return Math.round(n).toLocaleString("de-DE")+" \u20ac";}
 function lohntBranche(){
   var k=document.getElementById("lo-branche").value;
